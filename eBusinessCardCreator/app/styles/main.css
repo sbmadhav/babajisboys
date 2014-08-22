@@ -6,7 +6,7 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
+. marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -89,10 +89,13 @@ input, textarea{
     padding: 7px 33px;
 }
 .modal-dialog{
-    width: 33%;
+    width: 38%;
 }
 .desig{
     padding: 0 20px;
+}
+.desig-org{
+    display: inline;
 }
 .card-container{
     padding: 20px;   
@@ -108,13 +111,13 @@ input, textarea{
     text-align: right; 
 }
 .card-cell{
-    display: inline;s
+    display: inline;
 }
 .card-label{
     text-decoration: underline;
 }
 .res-container{
-    margin-top: 3px; 
+    margin-top: 24px; 
 }
 .official-container{
     text-align: right;
