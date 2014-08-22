@@ -12,7 +12,12 @@
     <div class="column">
         <div>  
             <label for="org">Organisation:</label>
-            <input id="org" name="org" ng-model="org"/>
+            <input id="org" list="organisation" ng-model="org">
+            <datalist id="organisation">
+             <option value="Sapient"></option>
+             <option value="Google"></option>
+             <option value="Microsoft"></option>
+            </datalist>
         </div>
         <div>  
             <label for="name">Name:</label>
@@ -27,11 +32,11 @@
             <textarea id="offc-address" name="offcAddress" ng-model="offcAddress"></textarea>
         </div>
         <label for="theme">Select Theme:</label>
-        <select ng-init="theme=options[0]" ng-options="options.value for option in options" id="theme" ng-model="theme">
+        <select ng-init="theme=options[0]" ng-options="option for option in options" id="theme" ng-model="theme">
             <option val="white">White</option>  
             <option val="black">Black</option>
             <option val="new">Create new theme</option>      
-        </select>
+        </select>        
     </div>
     <div class="column">
         <div>  

@@ -10,13 +10,24 @@ angular.module('hacksterApp')
       '16',
       '18'
     ];
-    var options = [{
-       name: 'Something Cool',
-       value: 'something-cool-value'
-    }, {
-       name: 'Something Else',
-       value: 'something-else-value'
-    }];
+    $scope.options = [
+       'White',
+       'Black',
+       'Create New'
+    ];
+    var orgJson = {
+        'Sapient': 'Black'
+        'Google': 'White'
+        'Microsoft': 'Green'
+    };
+      
+    $scope.orgSelected = function() {
+        if( orgJson[$scope.org] != undefined ){
+            $("#theme").attr("disabled", "disabled");
+        }
+        
+        
+    }
       
     $scope.submitData = function() {
         var formData = $("#form-data").serializeArray();
