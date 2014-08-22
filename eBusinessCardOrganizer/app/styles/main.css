@@ -1,0 +1,61 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+html,body{
+	margin:0;
+	padding:0;
+}
+
+.user-default-nav span{
+	margin:0 10px;
+}
+
+.main-content,.main-content .user-row{
+	margin-bottom:25px;
+}
+.main-content .tile{
+		padding:20px;
+		background-color:cyan;
+		height:100px;
+		box-sizing:border-box;
+		margin-bottom:25px;
+	}
+.main-content  .tile:first-child{
+		margin-left:0;
+	}
+.main-content  .tile:last-child{
+		margin-right:0;
+	}
+@media only screen 
+and (min-width : 780px) {
+/* Styles */
+	.main-content .tile{
+	width:100%;
+	float:none;
+	}
+
+}
+@media only screen 
+and (min-width : 781px) {
+	.main-content .tile{
+		width:23%;
+		margin:0 10px;
+		float:left;
+		background-color:cyan;
+		height:100px;
+		box-sizing:border-box;
+	}
+}
+/* Smartphones (portrait and landscape) ----------- */
+

@@ -1,0 +1,61 @@
+{
+	"response":{
+		"data":{
+			
+			"b1":{
+				"id":"b1",
+				"name":"b1",
+				"profession":"b1",
+				"image":".png",
+				"contact":"3435",
+				"tags":["friends","others","abc"]
+			},
+			"b2":{
+				"id":"b2",
+				"name":"b2",
+				"profession":"b2",
+				"image":".png",
+				"contact":"343asd5",
+				"tags":["friends","others"]
+			},
+			"a1":{
+				"id":"a1",
+				"name":"kiran",
+				"profession":"SE",
+				"image":".png",
+				"contact":"abc",
+				"tags":["friends"]
+			}
+		},
+		"categories":[		
+			{
+				"category":"all",
+				"displaytext":"all cards",
+				"list":["a1","b1","b2"],
+				"icon":"fa fa-envelope fa-fw"
+			},
+
+			{
+				"category":"friends",
+				"displaytext":"friends",
+				"list":["a1","b1"],
+				"icon":"fa fa-bar-chart-o fa-fw"
+			},
+			
+			{
+				"category":"abc",
+				"displaytext":"abc",
+				"list":["b1"],
+				"icon":"fa fa-table fa-fw"
+			},
+			
+			{
+				"category":"others",
+				"displaytext":"others",
+				"list":["b1","b2"],
+				"icon":"fa fa-edit fa-fw"
+			}
+		]
+		
+	}
+}
