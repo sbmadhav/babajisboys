@@ -57,30 +57,58 @@
             <textarea id="res-address" name="resAddress" ng-model="resAddress"></textarea>
         </div>
         <div class="button-container">
-            <a href="#myModal" role="button" ng-click="preview()" class="btn btn-large btn-primary" data-toggle="modal">Preview</a>
-            <button type="submit" role="button" class="btn btn-large btn-primary" >Save</button>  
+            <a href="#myModal" role="button" ng-click="preview($event)" class="btn btn-small btn-primary" data-toggle="modal">Preview</a>
+            <button type="submit" role="button" class="btn btn-small btn-primary" >Save</button>   
         </div>
     </div>    
   </form>
 </div>
 
+
+
 <!-- Button HTML (to Trigger Modal) -->
 
  
 <!-- Modal HTML -->
+
 <div id="myModal" class="modal fade">
+
     <div class="modal-dialog">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <div class="card-container"> 
                 <div class="card-wrapper">
-                    <h4 class="modal-title" id="card-name">sdscsa</h4> 
+                    <div class="column">
+                        <h4 class="modal-title" ng-bind="name"></h4> 
+                        <div class="desig">
+                            <label ng-bind="desig"></label>,
+                            <label ng-bind="org"></label>
+                        </div>
+                        <div class="res-container">  
+                            <label class="card-label">Residencial Address:</label>
+                            <div class="address" ng-bind="resAddress"></div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="column">
+                        
+                        <div class="cell-container"><label>Cell: </label><h4 class="card-cell" ng-bind="phone"></h4> </div> 
+                        <div class="official-container">                        
+                            <label class="card-label">Official Address:</label>
+                            <div class="address" ng-bind="offcAddress"></div>
+                            <label>Email:</label>
+                            <label class="modal-title" ng-bind="email"></label>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
 <div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-</div>
+  <p><span class="glyphicon glyphicon-heart"></span> from the Babaji's team</p>
+</div

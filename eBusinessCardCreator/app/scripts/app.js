@@ -13,7 +13,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,4 +29,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('FIREBASE_URL', 'https://ebusinesscard.firebaseio.com/');

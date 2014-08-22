@@ -11,13 +11,14 @@ angular.module('hacksterApp')
       '18'
     ];
     $scope.options = [
-       'White',
+       'Red',
        'Black',
+       'Green',
        'Create New'
     ];
     var orgJson = {
         'Sapient': 'Black',
-        'Google': 'White',
+        'Google': 'Red',
         'Microsoft': 'Green'
     };
       
@@ -25,6 +26,8 @@ angular.module('hacksterApp')
         if( orgJson[$scope.org] != undefined ){
             $("#theme").attr("disabled", "disabled");
             $(".theme-selected").text(orgJson[$scope.org] + " theme is selected");
+            $scope.theme = orgJson[$scope.org];
+            $(".theme-selected").css("color", orgJson[$scope.org]);
         }
         else {
             $("#theme").removeAttr("disabled");
@@ -32,8 +35,22 @@ angular.module('hacksterApp')
         }
     };
     
-    $scope.preview = function() {        
-        $("#card-name").text("abc");
+    $scope.preview = function(evt) {  
+        
+        evt.preventDefault();
+        if( $scope.theme == "Black"){
+            $(".modal-content").css("background-color", "black");
+            $(".modal-dialog").css("color", "white");
+            $(".card-wrapper").css("border", "1px white solid");
+        } else if( $scope.theme == "Red"){
+             $(".modal-content").css("background-color", "Red");
+             $(".modal-dialog").css("color", "white");
+             $(".card-wrapper").css("border", "1px white solid");
+        } else if( $scope.theme == "Green"){
+             $(".modal-content").css("background-color", "green");
+             $(".modal-dialog").css("color", "white");
+             $(".card-wrapper").css("border", "1px white solid");
+        }
     };
       
     $scope.submitData = function() {
