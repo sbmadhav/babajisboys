@@ -73,6 +73,17 @@ body {
     display: block;
     margin-top: 20px;
 }
+.modal-content{
+    
+}
+.card-container{
+    padding: 20px;   
+}
+.card-wrapper{
+    border: 1px black solid;
+}
+
+
 
 /* Supporting marketing content */
 .marketing {

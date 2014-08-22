@@ -12,12 +12,13 @@
     <div class="column">
         <div>  
             <label for="org">Organisation:</label>
-            <input id="org" list="organisation" ng-model="org">
+            <input id="org" list="organisation" ng-blur="orgSelected()" ng-model="org">
             <datalist id="organisation">
              <option value="Sapient"></option>
              <option value="Google"></option>
              <option value="Microsoft"></option>
             </datalist>
+            <label class="theme-selected"></label>
         </div>
         <div>  
             <label for="name">Name:</label>
@@ -56,25 +57,28 @@
             <textarea id="res-address" name="resAddress" ng-model="resAddress"></textarea>
         </div>
         <div class="button-container">
-            <button type="submit">Preview</button>  
+            <a href="#myModal" role="button" ng-click="preview()" class="btn btn-large btn-primary" data-toggle="modal">Preview</a>
+            <button type="submit" role="button" class="btn btn-large btn-primary" >Save</button>  
         </div>
     </div>    
   </form>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<!-- Button HTML (to Trigger Modal) -->
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+ 
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="card-container"> 
+                <div class="card-wrapper">
+                    <h4 class="modal-title" id="card-name">sdscsa</h4> 
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="footer">
