@@ -29,5 +29,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  })
-  .constant('FIREBASE_URL', 'https://ebusinesscard.firebaseio.com/');
+  });

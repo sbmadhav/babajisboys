@@ -1,7 +1,20 @@
 'use strict';
 
 angular.module('hacksterApp')
-  .controller('MainCtrl', function ($scope, $location) {
+  .controller('MainCtrl', function ($scope, $location, $firebase) {
+    var ref = new Firebase("https://ebusinesscard.firebaseio.com/accounts");
+    var sync = $firebase(ref);
+      
+    ref.on('value',function(data){     
+        $scope.accounts = data.val();        
+        console.log(data.val());        
+    });
+      
+    var syncObject = sync.$asObject();
+      // synchronize the object with a three-way data binding
+      // click on `index.html` above to see it used in the DOM!
+      syncObject.$bindTo($scope, "data");
+      
     $scope.fontSize = [
       '14',
       '16',
@@ -54,9 +67,10 @@ angular.module('hacksterApp')
     };
       
     $scope.submitData = function() {
-        var formData = $("#form-data").serializeArray();
-        sessionStorage.setItem("customerData", formData);
-        $location.path("/theme");
+        var formData = $("#form-data").serializeArray();=        
+        var abc = {"accounts": formData};
+        sync.$set(abc);
+        //$location.path("/theme");
     };
       
   });
