@@ -26,11 +26,19 @@ html,body{
 }
 .main-content .tile{
 		padding:20px;
-		background-color:#FDFEAB;
+		background-color:cyan;
 		height:100px;
 		box-sizing:border-box;
 		margin-bottom:25px;
+		cursor: pointer;
 	}
+.tile .img-responsive ,.tile h4{
+	display:inline-block;
+	text-align:right;
+}
+.tile h4{
+	padding:0 4px;
+}
 .main-content  .tile:first-child{
 		margin-left:0;
 	}
@@ -83,6 +91,10 @@ and (min-width : 780px) {
 	.basic-details,.additional-details,.social-details{
 		width:100%;
 		float:none;
+	}
+	.business-card{
+		max-width: 700px;
+		margin: 0 auto;
 	}
 
 }

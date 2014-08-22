@@ -67,13 +67,16 @@
 
       <div class="main-content clearfix" ng-controller="tabController" ng-clock>
 		  <div ng-show="!isShowCard()">
-			  <a ng-repeat="card in getCards()" class='tile' href="#" ng-click="showCard($event, card.id)">
-					<span ng-bind="card.id"></span>
-			  </a>
+			  <div ng-repeat="card in getCards()" class='tile'  ng-click="showCard($event, card.id)">			  
+					
+					<img ng-src="{{card.imageSrc}}" class="img-responsive"/>
+					<h4>{{card.name}}</h4>
+					
+			  </div>
 		  </div>
 			  
 			  <div class="business-card clearfix" ng-show="isShowCard()">
-				<img class="img-responsive" ng-src="{{card.imageSrc}}">
+				<img class="img-responsive" ng-src="{{card.imageSrc}}"/>
 				<div class="basic-details">
 					<h4>Basic Details</h4>
 					<p class="name">{{card.name}}</p>
@@ -87,11 +90,12 @@
 							share
 						</a>
 					</p>
-					<p class="catagory"><span> Category: </span> Friend <a class="category-edit" href="JavaScript:void(0);">Edit</a></p>
+					<p class="catagory"><span> Category: </span>  <a class="category-edit" href="JavaScript:void(0);">Edit</a></p>
 					<div class="category-check" style="display:none">
-						<input type="checkbox" > Friend</input>
-						<input type="checkbox" > Colleague</input>
-						<input type="checkbox" > collage mate</input>
+						
+						<div ng-repeat="category in getCategories()"  ng-if="category.category!='all'">
+							<input type="checkbox" href="#" />{{category.displaytext}}
+						</div>
 						<input type="text" class="form-control"/>
 						<button type="button" class="btn btn-primary">Add</button>
 					</div>
@@ -104,8 +108,13 @@
 						<li><a ng-href="{{card.social.twitter}}"><img src="../images/twitter.png" alt="twitter" /></a></li>
 						<li><a ng-href="{{card.social.linkdin}}"><img src="../images/linkedin.png" alt="linkdin" /></a></li>
 					</ul>
+					<a href="#" ng-click="closeShowCard($event)">
+						Back
+					</a>
 				</div>
+				
 			</div>
+			
 			  
 			
 		
@@ -149,6 +158,9 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

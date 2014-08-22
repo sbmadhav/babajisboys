@@ -4,25 +4,27 @@
 			
 			"b1":{
 				"id":"b1",
-				"name":"b1",
+				"name":"Shouvik Bhuiyan",
 				"profession":"b1",
 				"image":".png",
 				"contact":"3435",
+				"imageSrc" : "../images/thumbnail/demo-img.jpg",
+				
 				"tags":["friends","others","abc"]
 			},
 			"b2":{
 				"id":"b2",
-				"name":"b2",
+				"name":"Bhuiyan",
 				"profession":"b2",
-				"image":".png",
+				"imageSrc" : "../images/thumbnail/demo-img.jpg",
 				"contact":"343asd5",
 				"tags":["friends","others"]
 			},
 			"a1":{
 				"id":"a1",
-				"name":"kiran",
+				"name":"hii",
 				"profession":"SE",
-				"image":".png",
+				"imageSrc" : "../images/thumbnail/demo-img.jpg",
 				"contact":"abc",
 				"tags":["friends"]
 			}

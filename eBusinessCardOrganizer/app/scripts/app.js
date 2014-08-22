@@ -18,35 +18,26 @@ var a = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+	'firebase'
   ]);
   
 
 
-a.controller("initModule",['$scope','$http','maindata',function($scope,$http,maindata){
+a.controller("initModule",['$scope','$http','maindata','$firebase',function($scope,$http,maindata,$firebase){
 	
 	function init(){
-	
-		$('.category-edit').click(function(){
-		$('.category-check').slideToggle();
-		});
 		$scope.loading=true;
 		var postdata='';
 
-		$http.get('/services/response.json')
-		.success(function(data){
-			
-			$scope.loading=false;
-			maindata.setData(data);
-			
-			
-		})
-		.error(function(){
-			console.error("please contact system admin");
-			$scope.loading=false;
-		});
-		
-		$scope.getCategories = maindata.getCategories;
+		var ref = new Firebase('https://ebusinesscard.firebaseio.com/');
+	   //$scope.sync = $firebase(ref);
+	   ref.on('value',function(data){
+	   $scope.loading=false;
+	   maindata.setData(data.val());
+	   $scope.$apply();
+	   })
+	   $scope.getCategories = maindata.getCategories;
 	
 	}
 	$scope.setActivetab =maindata.setActivetab;
