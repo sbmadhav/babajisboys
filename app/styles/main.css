@@ -50,6 +50,25 @@ body {
   font-size: 21px;
   padding: 14px 24px;
 }
+.form-creation{
+    text-align: left;
+    display: inline-block;
+}
+.form-creation label,
+.form-creation input{
+    display: block; 
+}
+.column{
+    float: left;
+    margin: 0 20px; 
+}
+.column:last-child{
+    margin-right: 0;
+}
+.column:first-child{
+    margin-left: 0
+}
+
 
 /* Supporting marketing content */
 .marketing {
