@@ -26,6 +26,10 @@ var a = angular
 a.controller("initModule",['$scope','$http','maindata',function($scope,$http,maindata){
 	
 	function init(){
+	
+		$('.category-edit').click(function(){
+		$('.category-check').slideToggle();
+		});
 		$scope.loading=true;
 		var postdata='';
 
@@ -47,12 +51,14 @@ a.controller("initModule",['$scope','$http','maindata',function($scope,$http,mai
 	}
 	$scope.setActivetab =maindata.setActivetab;
 	$scope.getAllData = maindata.getAllData;
+	$scope.isShowCard = maindata.isShowCard;
 	
 	init();
 }])
 .factory('maindata',function(){
 	var originaldata;
 	var activetab='all';
+	var iscardshown=false;
 	
 	function getCardsIds (){
 			if(originaldata && originaldata.response && originaldata.response.categories)
@@ -87,6 +93,7 @@ a.controller("initModule",['$scope','$http','maindata',function($scope,$http,mai
 		},
 		setActivetab: function(tabname){
 			activetab = tabname;
+			iscardshown= false;
 		},
 		getActivetab : function(){
 			
@@ -107,11 +114,39 @@ a.controller("initModule",['$scope','$http','maindata',function($scope,$http,mai
 
 			if(originaldata && originaldata.response && originaldata.response.data)
 				return originaldata.response.data
+		},
+		isShowCard: function(){
+			return iscardshown;
+		},
+		setShowCard: function(flag){
+			iscardshown = flag;
 		}
 	}
 })
-.controller("tabController",['$scope','maindata',function($scope,maindata){
+.controller("tabController",['$scope','maindata','$http',function($scope,maindata,$http){
 	$scope.getCards = maindata.getCards;
+	$scope.showCard =function(evt,id){
+		if( evt )
+			evt.preventDefault();
+		maindata.setShowCard(true);
+		
+		
+		$http.get('/services/card.json')
+			.success(function(data){
+				console.log(data);
+				$scope.card = data.response; 
+			})
+			.error(function(){
+				console.error("loading problem in card json");
+			})
+	}
+	
+	$scope.closeShowCard = function(evt)
+	{
+		if( evt )
+			evt.preventDefault();
+		maindata.setShowCard(false);
+	}
 }])
 
 

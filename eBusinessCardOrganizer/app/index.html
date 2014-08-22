@@ -66,10 +66,51 @@
 		</nav>
 
       <div class="main-content clearfix" ng-controller="tabController" ng-clock>
-		  <div ng-repeat="card in getCards()" class='tile'>
-				<span ng-bind="card.id"></span>
+		  <div ng-show="!isShowCard()">
+			  <a ng-repeat="card in getCards()" class='tile' href="#" ng-click="showCard($event, card.id)">
+					<span ng-bind="card.id"></span>
+			  </a>
+		  </div>
+			  
+			  <div class="business-card clearfix" ng-show="isShowCard()">
+				<img class="img-responsive" ng-src="{{card.imageSrc}}">
+				<div class="basic-details">
+					<h4>Basic Details</h4>
+					<p class="name">{{card.name}}</p>
+					<p class="emailId"><a ng-href="mailto:{{card.email}}">{{card.email}}</a></p>
+					<p class="phoneNumber">{{card.mobile}}</p>
+				</div>
+				<div class="additional-details">
+					<h4>Additional Details</h4>
+					<p class="share-info" ng-if="card.share">
+						<a href="#">
+							share
+						</a>
+					</p>
+					<p class="catagory"><span> Category: </span> Friend <a class="category-edit" href="JavaScript:void(0);">Edit</a></p>
+					<div class="category-check" style="display:none">
+						<input type="checkbox" > Friend</input>
+						<input type="checkbox" > Colleague</input>
+						<input type="checkbox" > collage mate</input>
+						<input type="text" class="form-control"/>
+						<button type="button" class="btn btn-primary">Add</button>
+					</div>
+				</div>
+				<div class="social-details">
+					<h4>Social Contacts</h4>
+					<ul class="social-nav clearfix">
+						<li><a ng-href="{{card.social.facebook}}"><img src="../images/fb.png" alt="facebook" /></a></li>
+						<li><a ng-href="{{card.social.google}}"><img src="../images/google.png" alt="google" /></a></li>
+						<li><a ng-href="{{card.social.twitter}}"><img src="../images/twitter.png" alt="twitter" /></a></li>
+						<li><a ng-href="{{card.social.linkdin}}"><img src="../images/linkedin.png" alt="linkdin" /></a></li>
+					</ul>
+				</div>
 			</div>
-		</div>
+			  
+			
+		
+		  
+	 </div>
 	</div>
 
       <div class="footer">

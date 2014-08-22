@@ -26,7 +26,7 @@ html,body{
 }
 .main-content .tile{
 		padding:20px;
-		background-color:cyan;
+		background-color:#FDFEAB;
 		height:100px;
 		box-sizing:border-box;
 		margin-bottom:25px;
@@ -37,12 +37,52 @@ html,body{
 .main-content  .tile:last-child{
 		margin-right:0;
 	}
+.main-content .business-card{
+	width:100%;
+	padding:20px;
+	box-sizing:border-box;
+	background-color:#FDFEAB;
+}
+.business-card ul{
+	padding:0;
+}
+.business-card ul li{
+	list-style:none;
+	float:left;
+	margin:0 5px 0 5px;
+}
+.business-card  p{
+	font-size:1.2em;
+}
+.business-card  h4{
+	font-size:1.4em;
+	text-decoration: underline;
+	font-weight:bold;
+}
+
+.business-card  .name{
+	margin-top:10px;
+}
+.business-card ul li:first-child{
+	margin-left:0;
+}
+.catagory span{
+	font-weight:bold;
+}
+.category-check button{
+	width:100%;
+	margin-top:10px;
+}
 @media only screen 
 and (min-width : 780px) {
 /* Styles */
 	.main-content .tile{
 	width:100%;
 	float:none;
+	}
+	.basic-details,.additional-details,.social-details{
+		width:100%;
+		float:none;
 	}
 
 }
@@ -55,6 +95,12 @@ and (min-width : 781px) {
 		background-color:cyan;
 		height:100px;
 		box-sizing:border-box;
+	}
+	.basic-details,.additional-details,.social-details{
+	width:32%;
+	float:left;
+	box-sizing:border-box;
+	padding:0 10px;
 	}
 }
 /* Smartphones (portrait and landscape) ----------- */
