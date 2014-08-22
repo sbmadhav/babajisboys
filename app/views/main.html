@@ -8,60 +8,52 @@
 </div>
 
 <div class="jumbotron form-creation">
-  <form>
+  <form id="form-data" ng-submit="submitData()">
     <div class="column">
         <div>  
             <label for="org">Organisation:</label>
-            <input id="org" ng-model="org"/>
+            <input id="org" name="org" ng-model="org"/>
         </div>
         <div>  
             <label for="name">Name:</label>
-            <input id="name" ng-model="name"/> 
+            <input id="name" name="name" ng-model="name"/> 
         </div>
         <div>  
             <label for="desig">Designation:</label>
-            <input id="desig" ng-model="desig"/>
+            <input id="desig" name="desig" ng-model="desig"/>
         </div>
         <div>  
             <label for="offc-address">Office Address:</label>
-            <textarea id="offc-address" ng-model="offcAddress"></textarea>
+            <textarea id="offc-address" name="offcAddress" ng-model="offcAddress"></textarea>
         </div>
+        <label for="theme">Select Theme:</label>
+        <select ng-init="theme=options[0]" ng-options="options.value for option in options" id="theme" ng-model="theme">
+            <option val="white">White</option>  
+            <option val="black">Black</option>
+            <option val="new">Create new theme</option>      
+        </select>
     </div>
     <div class="column">
         <div>  
             <label for="email">Email:</label>
-            <input id="email" ng-model="email"/>
+            <input id="email" name="email" ng-model="email"/>
         </div>
         <div>  
             <label for="phone">Mob:</label>
-            <input id="phone" ng-model="phone"/>
+            <input id="phone" name="phone" ng-model="phone"/>
         </div>
         <div>  
             <label for="fax">Fax:</label>
-            <input id="fax" ng-model="fax"/>
-        </div>
-        <label for="font-style">Font-style:</label>
-        <select ng-init="fontStyle[0]" ng-options="rm.ref for rm in refmarkers" ng-init="model.refmarker=refmarkers[0]" 
-                ng-model="fontStyle">
-            <option val="arial">Arial</option>  
-            <option val="timesroman">Times New Roman</option>
-            <option val="calibri">Calibri</option>
-            <option val="Windings">Windings</option>
-            <option val=""></option>            
-        </select><label for="font-size">Font-size:</label>
-        <select ng-model="fontSize">
-            <option val="14">14</option>  
-            <option val="16">16</option>
-            <option val="18">18</option>
-            <option val="20">20</option>
-            <option val="22">22</option>            
-        </select>
+            <input id="fax" name="fax" ng-model="fax"/>
+        </div>        
         <div>  
             <label for="res-address">Residential Address:</label>
-            <textarea id="res-address" ng-model="resAddress"></textarea>
+            <textarea id="res-address" name="resAddress" ng-model="resAddress"></textarea>
         </div>
-    </div>
-      
+        <div class="button-container">
+            <button type="submit">Preview</button>  
+        </div>
+    </div>    
   </form>
 </div>
 

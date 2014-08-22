@@ -1,0 +1,50 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">E business card theme</h3>
+</div>
+
+<div class="jumbotron form-creation">
+  <form id="form-theme">    
+    <label for="font-style">Font-style:</label>
+    <select ng-init="fontStyle=options[0]" ng-options="option.name for option in options" ng-model="fontStyle">
+        <option val="arial">Arial</option>  
+        <option val="timesroman">Times New Roman</option>
+        <option val="calibri">Calibri</option>
+        <option val="Windings">Windings</option>
+        <option val=""></option>            
+    </select>
+    <label for="font-size">Font-size:</label>
+   <input type="range"/>
+    <label for="font-size">Background Image:</label>
+    <select ng-model="bgImage">
+        <option val="14">14</option>  
+        <option val="16">16</option>
+        <option val="18">18</option>
+        <option val="20">20</option>
+        <option val="22">22</option>            
+    </select>
+  </form>
+</div>
+
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>
+
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>

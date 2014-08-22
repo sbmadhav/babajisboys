@@ -51,6 +51,7 @@ body {
   padding: 14px 24px;
 }
 .form-creation{
+    width: 100%;
     text-align: left;
     display: inline-block;
 }
@@ -68,7 +69,13 @@ body {
 .column:first-child{
     margin-left: 0
 }
-
+.form-creation label[for="theme"]{
+    display: inline;
+}
+.form-creation .button-container{
+    display: block;
+    margin-top: 20px;
+}
 
 /* Supporting marketing content */
 .marketing {
